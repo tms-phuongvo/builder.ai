@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BuilderAI Output</title>
+    <link href="{{stylePath}}" rel="stylesheet" />
+    <script src="{{scriptPath}}"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f9;
+        color: #333;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #222;
+        font-weight: 600;
+      }
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 8px;
+        overflow-x: auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      .language-javascript {
+        color: #333;
+      }
+
+      .keyword {
+        color: #aa753a;
+      }
+
+      .string {
+        color: #ba9d38;
+      }
+
+      .comment {
+        color: #999;
+      }
+
+      .function .name {
+        color: blue;
+      }
+
+      .code-container p {
+        text-align: left;
+        font-size: 1.4em;
+        color: #000000;
+        margin-bottom: 20px;
+      }
+
+      code {
+        font-family: monospace;
+        font-size: 1em;
+        line-height: 1.5;
+        padding: 10px;
+        border-radius: 3px;
+        background-color: #eee;
+        display: block;
+      }
+
+      .code-container {
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 1em;
+      }
+
+      .copy-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 10px 15px;
+        font-size: 14px;
+        cursor: pointer;
+        background-color: #007acc;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .copy-button:hover {
+        background-color: #005a9e;
+        transform: scale(1.05);
+      }
+
+      .copy-button:active {
+        background-color: #003f73;
+        transform: scale(0.95);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Builder AI Output</h1>
+    <pre class="code-container">
+      {{output}}
+    </pre>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const codeBlocks = document.querySelectorAll("pre code");
+
+        codeBlocks.forEach((code) => {
+          const button = document.createElement("button");
+          button.className = "copy-button";
+          button.innerText = "Copy";
+
+          const container = code.parentElement;
+          container.style.position = "relative";
+          container.appendChild(button);
+
+          button.addEventListener("click", () => {
+            const codeText = code.innerText;
+            copyToClipboard(codeText);
+            button.innerText = "Copied!";
+            setTimeout(() => {
+              button.innerText = "Copy";
+            }, 2000);
+          });
+        });
+      });
+
+      function copyToClipboard(text) {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+    </script>
+  </body>
+</html>
