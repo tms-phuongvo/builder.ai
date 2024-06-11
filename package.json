@@ -2,7 +2,7 @@
   "name": "builder-ai",
   "displayName": "Builder AI",
   "description": "Builder AI helps user writing code for specified tasks as per your requirements",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.89.0"
   },
@@ -15,10 +15,9 @@
   "repository": "https://github.com/tomosia-phuongvo/builder.ai",
   "activationEvents": [
     "onView:builderAIExplorer",
-    "onCommand:builderAIAssistant.gptKey",
+    "onCommand:builderAIAssistant.setting",
     "onCommand:builderAIAssistant.selectFile",
     "onCommand:builderAIAssistant.enterRequirement",
-    "onCommand:builderAIAssistant.showGPTOutput",
     "onCommand:builderAIAssistant.clearAll"
   ],
   "contributes": {
@@ -54,10 +53,6 @@
         }
       },
       {
-        "command": "builderAIAssistant.showGPTOutput",
-        "title": "Show Builder AI Output"
-      },
-      {
         "command": "builderAIAssistant.clearAll",
         "title": "Clear",
         "tooltip": "Clear",
@@ -67,31 +62,31 @@
         }
       },
       {
-        "command": "builderAIAssistant.gptKey",
-        "title": "GPT Key",
-        "tooltip": "GPT Key",
+        "command": "builderAIAssistant.setting",
+        "title": "Setting",
+        "tooltip": "Setting",
         "icon": {
-          "light": "resources/light/key.png",
-          "dark": "resources/dark/key.png"
+          "light": "resources/light/setting.png",
+          "dark": "resources/dark/setting.png"
         }
       }
     ],
     "menus": {
       "view/title": [
         {
-          "command": "builderAIAssistant.clearAll",
-          "when": "view == builderAIExplorer",
-          "group": "navigation"
-        },
-        {
-          "command": "builderAIAssistant.gptKey",
-          "when": "view == builderAIExplorer",
-          "group": "navigation"
-        },
-        {
           "command": "builderAIAssistant.enterRequirement",
           "when": "view == builderAIExplorer",
-          "group": "navigation"
+          "group": "navigation@0"
+        },
+        {
+          "command": "builderAIAssistant.clearAll",
+          "when": "view == builderAIExplorer",
+          "group": "navigation@1"
+        },
+        {
+          "command": "builderAIAssistant.setting",
+          "when": "view == builderAIExplorer",
+          "group": "navigation@2"
         }
       ],
       "view/item/context": [

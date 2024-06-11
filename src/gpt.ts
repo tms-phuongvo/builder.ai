@@ -35,8 +35,9 @@ export class ChatGPT {
         new HumanMessage({ content: prompt })
       ]);
       return String(response.content);
-    } catch {
-      throw error;
+    } catch(err) {
+      console.log(`Error: ${err} `);
+      throw err;
     } finally {
       console.log("END GPT");
     }

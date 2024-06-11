@@ -16,16 +16,18 @@ Builder AI is a VS Code extension designed to accelerate your coding process by 
 
 1. Open your project in VS Code.
 2. Open the "Builder AI Code" view from the activity bar.
-3. Select key icon in navigation bar and input GPT Key
-3. Select the files relevant to your task:
-    - Click at "Select File" in left side a file in the "Builder AI" view .
-4. Enter your requirement:
-    - Click pencil icon in navigation.
-    - Input the description of the task you need assistance with.
-5. Generate code suggestions:
-    - The extension will read the selected files and provide code suggestions based on your input.
-6. View the output:
-    - The generated code suggestions will be displayed in a new panel.
+3. Select setting icon in navigation bar
+   - Select "GPT Model" if you want to change GPT Model.The extension supports **GPT 3.5** and **GPT 4.0**
+   - Select "GPT Key" if you want to change GPT Key
+4. Select the files relevant to your task:
+   - Click at "Select File" in left side a file in the "Builder AI" view .
+5. Enter your requirement:
+   - Click pencil icon in navigation.
+   - Input the description of the task you need assistance with.
+6. Generate code suggestions:
+   - The extension will read the selected files and provide code suggestions based on your input.
+7. View the output:
+   - The generated code suggestions will be displayed in a new panel.
 
 ## Commands
 
@@ -33,10 +35,4 @@ Builder AI is a VS Code extension designed to accelerate your coding process by 
 - `builderAIAssistant.enterRequirement`: Enter the description for your task.
 - `builderAIAssistant.showGPTOutput`: View the generated code based on the selected files and requirements.
 - `builderAIAssistant.clearAll`: Clear all selected files and reset the extension.
-- `builderAIAssistant.gptKey`: Enter and store your OpenGPT API key.
-
-## Changelog
-
-### 0.0.1
-
-- Initial release
+- `builderAIAssistant.setting`: Enter and store your OpenGPT API key.

@@ -4,6 +4,16 @@ All notable changes to the "builder-ai" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## Changelog
+
+### 0.0.1
 
 - Initial release
+
+### 0.0.3
+
+- Add icon and description for extension
+
+### 0.0.4
+
+- Update feature select GPT Model

@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BuilderAI Output</title>
-    <link href="{{stylePath}}" rel="stylesheet" />
-    <script src="{{scriptPath}}"></script>
+    <link href="./prism.css" rel="stylesheet" />
+    <script src="./prism.js"></script>
     <style>
       body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Monaco, Tahoma, Geneva, Verdana, sans-serif";
         margin: 20px;
         background-color: #2C3A47;
       }
 
       h1 {
-        text-align: center;
         text-align: center;
         font-size: 2.5em;
         margin-bottom: 20px;
@@ -53,10 +52,10 @@
 
       .code-container p {
         text-align: left;
-        font-size: 1.2em;
+        font-size: 1.4em;
         font-weight: 600;
         color: #e17055;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
       }
 
       code {
@@ -78,8 +77,8 @@
 
       .copy-button {
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: 10px;
+        right: 10px;
         padding: 10px 15px;
         font-size: 14px;
         cursor: pointer;
@@ -104,7 +103,58 @@
   <body>
     <h1>Builder AI Output</h1>
     <pre class="code-container">
-      {{output}}
+      <p>File: mfkessai_invoice.go</p>
+      <pre><code class="javascript language-javascript">const TRANSACTION_EVENT = {
+    mint: 1,
+    transfer: 2,
+    province: 3,
+  };
+  
+  const NFT_PRIZE_STATE = {
+    pending: 1,
+    transfer: 2,
+  };
+  
+  const NULL_ADDRESS = '0x0000000000000000000000000000000000000000';
+  
+  const MATERIAL_HOST =
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:4566'
+      : `https://s3.${process.env.S3_AWS_REGION}.amazonaws.com`;
+  
+  const NFT_TYPE = 'ERC1155';
+  
+  const POLYGON_MAINNET = 'Polygon';
+  
+  const QLEAR_NFT = 'NFT';
+  
+  const ORDER_ISSUEABLE_STATUS = {
+    ordered: 1,
+    accepted: 2,
+    rejected: 3,
+  };
+  
+  const MILLIAL_ADDRESS_MAIL = {
+    development: 'localhost@example.com',
+    staging: 'qlear@tomosia.com',
+    production: 'support@qlear.cloud',
+  };
+  
+  const DEFAULT_ISSUEABLE_NFT_NUMBER = 100;
+  
+  module.exports = {
+    TRANSACTION_EVENT,
+    NFT_PRIZE_STATE,
+    NULL_ADDRESS,
+    MATERIAL_HOST,
+    NFT_TYPE,
+    POLYGON_MAINNET,
+    QLEAR_NFT,
+    ORDER_ISSUEABLE_STATUS,
+    MILLIAL_ADDRESS_MAIL,
+    DEFAULT_ISSUEABLE_NFT_NUMBER,
+  };
+  </code></pre>
     </pre>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
