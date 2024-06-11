@@ -1,15 +1,18 @@
 {
   "name": "builder-ai",
   "displayName": "Builder AI",
-  "description": "",
-  "version": "0.0.1",
+  "description": "Builder AI helps user writing code for specified tasks as per your requirements",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.89.0"
   },
   "categories": [
     "Other"
   ],
+  "publisher": "PhuongVo77",
   "main": "./out/extension.js",
+  "icon": "resources/icon.png",
+  "repository": "https://github.com/tomosia-phuongvo/builder.ai",
   "activationEvents": [
     "onView:builderAIExplorer",
     "onCommand:builderAIAssistant.gptKey",
@@ -24,7 +27,7 @@
         {
           "id": "builderAIAssistant",
           "title": "Builder AI Code",
-          "icon": "resources/logo.png"
+          "icon": "resources/icon_shape.png"
         }
       ]
     },
