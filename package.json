@@ -1,0 +1,131 @@
+{
+  "name": "builder-ai",
+  "displayName": "Builder AI",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onView:builderAIExplorer",
+    "onCommand:builderAIAssistant.gptKey",
+    "onCommand:builderAIAssistant.selectFile",
+    "onCommand:builderAIAssistant.enterRequirement",
+    "onCommand:builderAIAssistant.showGPTOutput",
+    "onCommand:builderAIAssistant.clearAll"
+  ],
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "builderAIAssistant",
+          "title": "Builder AI Code",
+          "icon": "resources/logo.png"
+        }
+      ]
+    },
+    "views": {
+      "builderAIAssistant": [
+        {
+          "id": "builderAIExplorer",
+          "name": "Builder AI"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "builderAIAssistant.selectFile",
+        "title": "Select File"
+      },
+      {
+        "command": "builderAIAssistant.enterRequirement",
+        "tooltip": "Enter Requirement",
+        "title": "Enter Requirement",
+        "icon": {
+          "light": "resources/light/edit.png",
+          "dark": "resources/dark/edit.png"
+        }
+      },
+      {
+        "command": "builderAIAssistant.showGPTOutput",
+        "title": "Show Builder AI Output"
+      },
+      {
+        "command": "builderAIAssistant.clearAll",
+        "title": "Clear",
+        "tooltip": "Clear",
+        "icon": {
+          "light": "resources/light/refresh.png",
+          "dark": "resources/dark/refresh.png"
+        }
+      },
+      {
+        "command": "builderAIAssistant.gptKey",
+        "title": "GPT Key",
+        "tooltip": "GPT Key",
+        "icon": {
+          "light": "resources/light/key.png",
+          "dark": "resources/dark/key.png"
+        }
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "builderAIAssistant.clearAll",
+          "when": "view == builderAIExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "builderAIAssistant.gptKey",
+          "when": "view == builderAIExplorer",
+          "group": "navigation"
+        },
+        {
+          "command": "builderAIAssistant.enterRequirement",
+          "when": "view == builderAIExplorer",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "builderAIAssistant.selectFile",
+          "when": "view == builderAIExplorer && viewItem == gptExplorerItem",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/ftp": "^0.3.33",
+    "@types/mkdirp": "^0.5.2",
+    "@types/node": "^18",
+    "@types/rimraf": "^2.0.2",
+    "@types/showdown": "^2.0.6",
+    "@types/vscode": "^1.73.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.26.0",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.1.1",
+    "jsonc-parser": "^0.4.2",
+    "minimist": "^1.2.6",
+    "mkdirp": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "showdown": "^2.1.0"
+  }
+}
